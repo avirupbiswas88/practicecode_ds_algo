@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="student" class="com.vmware.Student">
+	
+		<!-- <property name="name" value="Avirup" />
+		<property name="age" value="31" /> -->
+		
+		<!-- <constructor-arg index= "0" value="Avirup Biswas"/>
+		<constructor-arg index= "1" value="31"/> -->
+		
+		<!-- <constructor-arg type= "int" value="31"/>
+		<constructor-arg type= "java.lang.String" value="Avirup Biswas"/> -->
+		
+		<property name="name" value="Avirup Biswas" />
+		<property name="age" value="31" />
+<!-- 		<property name="presentAddress" ref="presentAddress"></property>
+		<property name="permanentAddress" ref="permanentAddress"></property> -->
+		
+		<!-- inner ref bean inside property -->
+		<property name="presentAddress">
+			<bean class="com.vmware.Address">
+				<property name="address1" value="1263A, 2nd main, 5th cross"></property>
+				<property name="address2" value="BTM Layout 4th Stage"></property>
+				<property name="city" value="Bengaluru"></property>
+				<property name="state" value="Karnataka"></property>
+				<property name="country" value="India"></property>
+				<property name="postalCode" value="560076"></property>
+			</bean>
+		</property>
+		
+		<!-- inner ref bean inside property -->
+		<property name="permanentAddress">
+			<bean class="com.vmware.Address">
+				<property name="address1" value="Vill-North Habra, PO- Habra"></property>
+				<property name="address2" value="Dist- North 24 Parganas"></property>
+				<property name="city" value="Habra"></property>
+				<property name="state" value="West Bengal"></property>
+				<property name="country" value="India"></property>
+				<property name="postalCode" value="743263"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="presentAddress" class="com.vmware.Address">
+		<property name="address1" value="1263A, 2nd main, 5th cross"></property>
+		<property name="address2" value="BTM Layout 4th Stage"></property>
+		<property name="city" value="Bengaluru"></property>
+		<property name="state" value="Karnataka"></property>
+		<property name="country" value="India"></property>
+		<property name="postalCode" value="560076"></property>
+	</bean>
+	
+	<bean id="permanentAddress" class="com.vmware.Address">
+		<property name="address1" value="Vill-North Habra, PO- Habra"></property>
+		<property name="address2" value="Dist- North 24 Parganas"></property>
+		<property name="city" value="Habra"></property>
+		<property name="state" value="West Bengal"></property>
+		<property name="country" value="India"></property>
+		<property name="postalCode" value="743263"></property>
+	</bean>
+
+</beans>
